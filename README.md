@@ -1,4 +1,4 @@
-# Smart Lender -- AI Powered Loan Approval Prediction System
+# Smart Lender - AI Powered Loan Approval Prediction System
 
 ## Overview
 
