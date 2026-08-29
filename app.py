@@ -17,10 +17,10 @@ import pickle
 app = Flask(__name__)
 
 # ===========================
-# Load Trained XGBoost Model
+# Load Trained Random Forest Model
 # ===========================
 
-with open("model/xgboost_model.pkl", "rb") as file:
+with open("model/random_forest_model.pkl", "rb") as file:
     model = pickle.load(file)
 
 # ===========================
