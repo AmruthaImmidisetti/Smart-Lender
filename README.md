@@ -7,34 +7,34 @@ whether a loan application is likely to be approved or rejected based on
 applicant information. The project automates loan screening and provides
 real-time predictions through a Flask web application.
 
-The deployed model used in this project is **XGBoost**.
+The deployed model used in this project is **Random Forest**.
 
 ------------------------------------------------------------------------
 
 ## Features
 
--   Real-time loan approval prediction
--   Flask-based web interface
--   Complete ML pipeline
--   Data preprocessing
--   XGBoost model deployment
--   Pickle model serialization
+- Real-time loan approval prediction
+- Flask-based web interface
+- Complete ML pipeline
+- Data preprocessing
+- Random Forest model deployment
+- Pickle model serialization
 
 ------------------------------------------------------------------------
 
 ## Tech Stack
 
--   Python
--   Flask
--   HTML
--   CSS
--   Pandas
--   NumPy
--   Scikit-learn
--   XGBoost
--   Matplotlib
--   Seaborn
--   Pickle
+- Python
+- Flask
+- HTML
+- CSS
+- Pandas
+- NumPy
+- Scikit-learn
+- XGBoost
+- Matplotlib
+- Seaborn
+- Pickle
 
 ------------------------------------------------------------------------
 
@@ -44,7 +44,7 @@ The Smart Lender application begins by collecting applicant information through 
 
 The preprocessing pipeline starts by converting categorical attributes into numerical values using the saved Label Encoders. The application then applies the previously trained Standard Scaler to normalize the numerical features so that the input data follows the same distribution as the training dataset. This preprocessing step is essential because the machine learning model was trained on standardized data, and using identical transformations during prediction helps maintain accuracy and reliability.
 
-After preprocessing, the transformed feature vector is passed to the trained **XGBoost** classification model, which serves as the prediction engine of the application. The model analyzes the applicant's financial and personal information by identifying patterns learned during the training phase and predicts whether the loan application is likely to be approved or rejected. The prediction is generated within a fraction of a second and returned to the Flask backend.
+After preprocessing, the transformed feature vector is passed to the trained **Random Forest** classification model, which serves as the prediction engine of the application. The model analyzes the applicant's financial and personal information by identifying patterns learned during the training phase and predicts whether the loan application is likely to be approved or rejected. The prediction is generated within a fraction of a second and returned to the Flask backend.
 
 Finally, the prediction result is displayed on a dedicated results page, where the applicant is informed whether the loan is **Approved** or **Rejected**. This end-to-end workflow enables financial institutions to automate the loan evaluation process, reduce manual effort, improve consistency in credit assessment, accelerate decision-making, and provide a seamless user experience through a web-based platform. The application demonstrates how Machine Learning can be integrated with modern web technologies to deliver an efficient, scalable, and intelligent loan approval prediction system.
 
@@ -68,12 +68,12 @@ The demo showcases:
 
 ## Project Structure
 
-``` text
+```text
 Smart_Lender/
 ├── app.py
 ├── dataset/
 ├── model/
-│   ├── xgboost_model.pkl
+│   ├── random_forest_model.pkl
 │   ├── scaler.pkl
 │   └── encoders.pkl
 ├── notebooks/
@@ -87,15 +87,15 @@ Smart_Lender/
 
 ## Machine Learning Pipeline
 
-1.  Dataset Collection
-2.  Exploratory Data Analysis
-3.  Missing Value Handling
-4.  Label Encoding
-5.  Outlier Handling
-6.  SMOTE
-7.  Feature Scaling
-8.  Train-Test Split
-9.  Model Training
+1. Dataset Collection
+2. Exploratory Data Analysis
+3. Missing Value Handling
+4. Label Encoding
+5. Outlier Handling
+6. SMOTE
+7. Feature Scaling
+8. Train-Test Split
+9. Model Training
 10. Model Evaluation
 11. Model Saving
 12. Flask Integration
@@ -105,16 +105,30 @@ Smart_Lender/
 
 ## Models Evaluated
 
--   Decision Tree
--   Random Forest
--   KNN
--   **XGBoost (Deployment Model)**
+- Decision Tree
+- **Random Forest (Deployment Model)**
+- KNN
+- XGBoost
+
+Random Forest was selected as the deployment model based on its superior
+performance during model evaluation.
+
+------------------------------------------------------------------------
+
+## Model Performance
+
+| Model | Training Accuracy | Testing Accuracy | Cross-Validation Score |
+|-------|-------------------|------------------|------------------------|
+| Decision Tree | 100% | 74.51% | 72.39% |
+| **Random Forest** | **100%** | **83.33%** | **81.07%** |
+| KNN | 84.45% | 73.53% | 63.31% |
+| XGBoost | 100% | 77.45% | 79.30% |
 
 ------------------------------------------------------------------------
 
 ## Run Locally
 
-``` bash
+```bash
 git clone https://github.com/AmruthaImmidisetti/Smart-Lender.git
 cd Smart-Lender
 python -m venv venv
@@ -134,8 +148,8 @@ http://127.0.0.1:5000
 
 ## Future Enhancements
 
--   OCR document verification
--   Explainable AI
--   Chatbot support
--   Mobile application
--   Cloud deployment
+- OCR document verification
+- Explainable AI
+- Chatbot support
+- Mobile application
+- Cloud deployment
