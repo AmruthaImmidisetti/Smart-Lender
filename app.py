@@ -146,6 +146,14 @@ def predict():
         prediction = model.predict(input_data)
 
         # ==========================================
+        # Prediction Probability
+        # ==========================================
+
+        probabilities = model.predict_proba(input_data)
+
+        confidence = probabilities[0][prediction[0]] * 100
+
+        # ==========================================
         # Convert Prediction
         # ==========================================
 
@@ -163,7 +171,8 @@ def predict():
 
         return render_template(
             "submit.html",
-            prediction=result
+            prediction=result,
+            confidence=round(confidence, 2)
         )
 
     except Exception as e:
