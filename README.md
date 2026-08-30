@@ -55,7 +55,7 @@ Finally, the prediction result is displayed on a dedicated results page, where t
 Watch the complete project demonstration here:
 
 🔗 **Demo Video:**  
-https://drive.google.com/file/d/1ntAr8gmSkkyPTXc1B3cNrbhuD6P3gvQx/view?usp=sharing
+https://drive.google.com/file/d/1wnQexD4k2gJOoszGvzwzq2hH-ix4NFUL/view?usp=sharing
 
 The demo showcases:
 - Home Page
